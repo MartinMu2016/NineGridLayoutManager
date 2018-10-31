@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="Martin"
+            android:textSize="17sp"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2018-11-21"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <!--android:paddingTop="11dp"-->
+    <!--android:paddingLeft="51dp"-->
+    <!--android:paddingRight="76dp"-->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/nine_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="11dp"
+        android:paddingLeft="51dp"
+        android:paddingRight="76dp"
+        android:paddingBottom="30dp">
+
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
