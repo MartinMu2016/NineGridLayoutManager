@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,14 +28,10 @@ import java.util.Random;
  */
 public class NineGridAdapter extends RecyclerView.Adapter<NineGridAdapter.Holder> {
 
-    private static final int[] COLORS = {0xff00FFFF, 0xffDEB887, 0xff5F9EA0,
-            0xff7FFF00, 0xff6495ED, 0xffDC143C,
-            0xff008B8B, 0xff006400, 0xff2F4F4F,
-            0xffFF69B4, 0xffFF00FF, 0xffCD5C5C,
-            0xff90EE90, 0xff87CEFA, 0xff800000};
+    private static final int[] COLORS = {0xff00FFFF, 0xffDEB887, 0xff5F9EA0, 0xff7FFF00, 0xff6495ED, 0xffDC143C, 0xff008B8B, 0xff006400, 0xff2F4F4F, 0xffFF69B4, 0xffFF00FF, 0xffCD5C5C, 0xff90EE90, 0xff87CEFA, 0xff800000};
 
 
-//    private final int[] buckets = {1, 4, 9};
+    //    private final int[] buckets = {1, 4, 9};
     private int mCount = 0;
 
     public NineGridAdapter(int i) {
@@ -51,14 +48,19 @@ public class NineGridAdapter extends RecyclerView.Adapter<NineGridAdapter.Holder
 
     @Override
     public void onBindViewHolder(final Holder holder, final int position) {
-        holder.text.setText(String.format("菜单%d",position));
+        holder.text.setText(String.format("Menu:%d", position));
         holder.itemView.setBackground(new ColorDrawable(randomColor()));
         holder.text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(),String.format("菜单%d",position),Toast.LENGTH_SHORT).show();
+                Toast.makeText(holder.itemView.getContext(), String.format("Menu:%d", position), Toast.LENGTH_SHORT)
+                     .show();
             }
         });
+        //        //image test
+//        Glide.with(holder.itemView.getContext())
+//             .load("http://img02.tooopen.com/images/20160509/tooopen_sy_161967094653.jpg")
+//             .into(holder.image);
     }
 
     @Override
@@ -72,14 +74,14 @@ public class NineGridAdapter extends RecyclerView.Adapter<NineGridAdapter.Holder
 
     class Holder extends RecyclerView.ViewHolder {
         TextView text;
+        ImageView imageView;
+
         public Holder(View itemView) {
             super(itemView);
-            text = (TextView) itemView.findViewById(R.id.text);
+            text = itemView.findViewById(R.id.text);
+            imageView = itemView.findViewById(R.id.image);
         }
     }
-
-
-
 
 
 }

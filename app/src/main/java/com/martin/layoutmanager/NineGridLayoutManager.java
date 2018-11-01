@@ -81,7 +81,6 @@ public class NineGridLayoutManager extends RecyclerView.LayoutManager {
         int height = 0;
         if (childCount == 1) {
             height = singleImageHeight;
-            widthSpec = View.MeasureSpec.makeMeasureSpec(singleImageWidth, View.MeasureSpec.EXACTLY);
         } else if (childCount > 0 && childCount <= 3) {
             height = 1 * itemHeight;
         } else if (childCount > 3 && childCount <= 6) {
@@ -166,16 +165,6 @@ public class NineGridLayoutManager extends RecyclerView.LayoutManager {
                         // 叠加高度
                         ct += itemHeight + gridSpacing;
                     }
-//                    child.layout(cl, ct, cl + width, ct + height);
-//                    // 累加宽度
-//                    cl += width + gridSpacing;
-//                    // 如果是换行
-//                    if ((i + 1) % 3 == 0) {//3列
-//                        // 重置左边的位置
-//                        cl = getPaddingLeft();
-//                        // 叠加高度
-//                        ct += height + gridSpacing;
-//                    }
                 }
                 break;
         }
