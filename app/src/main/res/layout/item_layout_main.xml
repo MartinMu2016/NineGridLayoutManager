@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,9 +30,6 @@
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
 
-    <!--android:paddingTop="11dp"-->
-    <!--android:paddingLeft="51dp"-->
-    <!--android:paddingRight="76dp"-->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/nine_grid"

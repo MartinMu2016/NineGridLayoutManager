@@ -53,10 +53,10 @@ public class NineGridLayoutManager extends RecyclerView.LayoutManager {
         return new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
 
-//    @Override
-//    public boolean isAutoMeasureEnabled() {
-//        return false;
-//    }
+    @Override
+    public boolean isAutoMeasureEnabled() {
+        return false;
+    }
 
     /**
      * 测量RecyclerView控件的宽高
@@ -73,7 +73,7 @@ public class NineGridLayoutManager extends RecyclerView.LayoutManager {
         }
         int width = View.MeasureSpec.getSize(widthSpec);//不能直接用getWidth 可能获取 0
         itemWidth = (width - getPaddingLeft() - getPaddingRight() - gridSpacing * (mSpanCount - 1)) / mSpanCount;
-        itemHeight = itemWidth;
+        itemHeight = itemWidth;//高度没问题
         int childCount = getItemCount();
         if (childCount < 0) {
             return;
@@ -130,7 +130,7 @@ public class NineGridLayoutManager extends RecyclerView.LayoutManager {
             return;
         }
         int cl = getPaddingLeft();
-        int ct = 0;
+        int ct = getPaddingTop();
         switch (getItemCount()) {
             case STATE_ONE:
                 for (int i = 0; i < getItemCount(); i++) {
